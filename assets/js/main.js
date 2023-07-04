@@ -180,27 +180,52 @@ const changeBG = () => {
   root.style.setProperty("--white-color-lightness", whiteColorLightness);
   root.style.setProperty("--dark-color-lightness", darkColorLightness);
 };
-Bg1.addEventListener("click", () => {
-  //add active class
-  Bg1.classList.add("active");
-  //remove active class from the others
-  Bg2.classList.remove("active");
+window.addEventListener("DOMContentLoaded", () => {
+  darkColorLightness = "95%";
+  whiteColorLightness = "20%";
+  lightColorLightness = "15%";
+
+  // add active class to Bg2
+  Bg2.classList.add("active");
+
+  // remove active class from the others
+  Bg1.classList.remove("active");
   Bg3.classList.remove("active");
-  //remove customized changes from local storage
-  window.location.reload();
+
+  // apply the background theme
+  changeBG();
 });
 
-//change background color
+// Event listeners for background buttons
+Bg1.addEventListener("click", () => {
+  darkColorLightness = "0%";
+  whiteColorLightness = "100%";
+  lightColorLightness = "95%";
+
+  // add active class to Bg1
+  Bg1.classList.add("active");
+
+  // remove active class from the others
+  Bg2.classList.remove("active");
+  Bg3.classList.remove("active");
+
+  // apply the background theme
+  changeBG();
+});
+
 Bg2.addEventListener("click", () => {
   darkColorLightness = "95%";
   whiteColorLightness = "20%";
   lightColorLightness = "15%";
 
-  //add active class
+  // add active class to Bg2
   Bg2.classList.add("active");
-  //remove active class from the others
+
+  // remove active class from the others
   Bg1.classList.remove("active");
   Bg3.classList.remove("active");
+
+  // apply the background theme
   changeBG();
 });
 
@@ -209,10 +234,13 @@ Bg3.addEventListener("click", () => {
   whiteColorLightness = "10%";
   lightColorLightness = "0%";
 
-  //add active class
+  // add active class to Bg3
   Bg3.classList.add("active");
-  //remove active class from the others
-  Bg2.classList.remove("active");
+
+  // remove active class from the others
   Bg1.classList.remove("active");
+  Bg2.classList.remove("active");
+
+  // apply the background theme
   changeBG();
 });
